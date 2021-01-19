@@ -1,6 +1,6 @@
 
 main {
-    margin: 20px;
+    margin: 25px;
 }
 
 ul#main-menu li a {
@@ -12,15 +12,25 @@ ul#main-menu li a {
     margin-bottom: 60px;
 }
 
+ul#main-menu li {
+    display: inline;
+    padding-right: 40px;
+}
+
 #main-menu{
     list-style-type: none;
     margin: 20px;
     padding: 0;
 }
 
+header {
+    border: 2px solid #F76C5E;
+    box-sizing: border-box;
+}
+
 .hero-section {
    background-color: #FAF9F9; 
-   padding: 30px 20px;
+   padding: 40px 20px;
 }
 
 .hero-section p {
@@ -36,6 +46,7 @@ h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: 60px;
     line-height: 1.1em;
+    margin: 0px;
     color: #F76C5E;
 }
 
@@ -74,6 +85,36 @@ img {
 
 .p1-intro-extra {
     padding: 0px 0px 5px 0px ;
+}
+
+form {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.contact-form label{
+    display: block;
+    color:#324376;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.name-group input, .message-group textarea {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: lightgray;
+}
+
+.button {
+    background-color:#F76C5E;
+    color:#FAF9F9;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
 }
 
 footer {
