@@ -93,6 +93,7 @@ form {
 }
 
 .contact-details input, .message-group textarea {
+    font-family: 'Open Sans', sans-serif;
     padding: 8px;
     width: 100%;
     margin-bottom: 20px;
@@ -143,4 +144,17 @@ ol.about-features li {
     line-height: 1.6em;
     margin: 0;
     padding: 0;
+}
+
+/*media queries*/
+
+@media (min-width: 1024px) {
+    body {
+        background-color:#e1e0e0;
+    }
+    p {
+        color:rebeccapurple;
+        font-size: 16px;
+        line-height: 1.4em;
+    }
 }
