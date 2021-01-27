@@ -78,7 +78,7 @@ img {
 
 
 form {
-    width: 600px;
+    width: 400px;
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -92,14 +92,35 @@ form {
     padding-bottom: 5px;
 }
 
+.contact-form-checkbox label {
+    display: inline;
+    margin-right: 20px;
+}
+
+.contact-form-radiobtn label {
+    display: inline;
+}
+
+ #website {
+     width: 80%;
+     padding: 10px 8px;
+     border-style: solid 1px lightgray;
+     margin-bottom: 20px;
+ }
+
+ #myfile {
+    margin-bottom: 20px;
+ }
+
 .contact-details input, .message-group textarea {
     font-family: 'Open Sans', sans-serif;
     padding: 8px;
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px;
     color: black;
-    border-style: none;
+    border-style: solid 1px lightgray;
 }
+
 
 .button {
     background-color:#F76C5E;

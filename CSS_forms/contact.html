@@ -37,12 +37,43 @@
         <input type:="text" name="name" placeholder="John Doe" />
         <label>E-mail</label>
         <input type:="e-mail" name="e-mail" placeholder="john.doe@email.com" />
+        <label>Phone number</label>
+        <input type:="tel" name="tel" placeholder="+31 xxxxxxxx" />
+        <label>Birth date</label>
+        <input type:="birthday" name="birthday" placeholder="DD-MM-YYYY" />
       </div>
+      <div class="contact-form-radiobtn">
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+      </div>
+      <br>
+      <div class="contact-form-checkbox">
+        <input type="checkbox" id="nationaliteit1" name="nationaliteit1" value="frans">
+        <label for="vehicle1">Frans</label><br>
+        <input type="checkbox" id="nationaliteit2" name="nationaliteit2" value="italiaans">
+        <label for="vehicle2">Italiaans</label><br>
+        <input type="checkbox" id="nationaliteit3" name="nationaliteit3" value="spaans">
+        <label for="vehicle3">Spaans</label><br>
+        <input type="checkbox" id="nationaliteit4" name="nationaliteit4" value="arabisch">
+        <label for="vehicle3">Arabisch</label>
+      </div>
+      <br>
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor">
+      <br>
       <div class="message-group">
-        <label>Message</label>
-        <textarea name:="message" maxlength="200" placeholder="Type here"></textarea>
+        <label>Biografie</label>
+        <textarea name="message" maxlength="300" placeholder="Type here"></textarea>
       </div>
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile">
+      <label for="website">Add your website</label>
+      <input type="url" id="website" name="website" placeholder="https//www.yourwebsite.com">
+      <br>
       <input class="button" type="submit" value="Submit" />
+      <input type="reset">
     </form>
   </main>
 
