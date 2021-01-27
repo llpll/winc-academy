@@ -76,6 +76,40 @@ img {
     padding: 0px 0px 5px 0px ;
 }
 
+<<<<<<< Updated upstream:CSS_1_selectors/styles.css
+=======
+form {
+    width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.contact-form label{
+    display: block;
+    color:#324376;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.contact-details input, .message-group textarea {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+    color: black;
+    border-style: none;
+}
+
+.button {
+    background-color:#F76C5E;
+    color:#FAF9F9;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+}
+
+>>>>>>> Stashed changes:styles.css
 footer {
     background-color: #324376;
     padding: 60px 20px;
