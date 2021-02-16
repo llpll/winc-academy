@@ -82,6 +82,7 @@ input {
 [value="Approve"] {
     color: limegreen;
     border: solid 1.6px limegreen;
+    border-right: 0;
     border-radius: 4px 0px 0px 4px;
 }
 
