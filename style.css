@@ -1,0 +1,137 @@
+
+/* global, hero */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family:'Work Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.header p {
+    color: grey;
+    margin-top: 5px;
+}
+
+p:nth-child(3) {
+    margin-top: 16px;
+}
+
+span {
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto ;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 24px;
+}
+
+.card {
+    grid-column: span 8;
+    max-width: 300px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-top: 24px;
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+h1, p {
+    justify-self: self-start;
+}
+
+.buttons {
+    align-self: flex-end;
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid lightgrey;
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+[value="Approve"] {
+    color: limegreen;
+    border: solid 1.6px limegreen;
+    border-radius: 4px 0px 0px 4px;
+}
+
+[value="Decline"] {
+    color: red;
+    border: solid 1.6px red;
+    border-radius: 0px 4px 4px 0px;
+}
+
+img {
+    max-width: 40px;
+    max-height: 40px;
+    justify-self: flex-end;
+    align-self: flex-start;
+}
+
+
+
+/* Media queries */
+
+/* tablet */
+
+@media (min-width: 768px) {
+
+    h1 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .card:first-child {
+        grid-column: span 4;
+        justify-self: self-end;
+    }
+
+    .card:last-child {
+        grid-column: span 4;
+        justify-self: self-start;
+    }
+    
+}
+
+/* desktop */
+
+@media (min-width: 1024px) {
+  
+    .card {
+        max-width: 350px;
+    }
+
+}
