@@ -1,0 +1,96 @@
+body {
+    margin: 100px;
+}
+
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+ul li a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1D2F48;
+    margin-right: 56px;
+}
+
+
+p {
+    margin-top: 56px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1D2F48;
+}
+
+p a {
+    text-decoration: none;
+    color: blue;
+}
+
+#hover:hover {
+    text-decoration: none;
+    color: lightskyblue;
+    font-weight: 800;
+}
+
+#active:active {
+    text-decoration: none;
+    color: red;
+    font-style: italic;
+}
+
+#visited:visited {
+    color: goldenrod;
+}
+
+input {
+    padding: 10px;
+    width: 300px;
+}
+
+main input:focus {
+    color: green;
+    font-size: 20px;
+    border: 1.5px solid green;
+
+}
+
+
+footer nav {
+    background-color: darkblue;
+    padding: 72px 24px;
+    margin-top: 56px;
+
+}
+
+nav ul li a {
+    color: white;
+    padding: 8px; 
+}
+
+.currentPage {
+    background-color: lightsteelblue;
+}
+
+nav ul li a:hover {
+    background-color: lightskyblue;
+}
+
+#search-input {
+    background-color: darkblue;
+    border: 1.5px solid lightsteelblue;
+    padding: 12px;
+}
+
+#search-input:focus {
+    border: 1.5px solid aqua;
+}
