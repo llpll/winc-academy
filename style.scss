@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
 
 /* Global */
@@ -93,58 +94,40 @@ header {
   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
 
-  &__brand-logo__img {
+}
+
+.header__brand-logo__img {
     width: auto;
     padding-top: 20px;
     height: 7.5em;
   }
+
+.title-left {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+  justify-content: flex-start;
+
+  &__line {
+    width: 3em;
+    height: 1px;
+    background-color: #000;
+    margin-right: 1em;
+  }
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding-bottom: 1em;
+// .title.title--left {
+//   justify-content: flex-start;
+// }
 
-    &__line {
-        width: 3em;
-        height: 1px;
-        background-color: #000;
-        margin-right: 1em;
-      }
 
-    &__title-left {
-        justify-content: flex-end;
-    }
-
-    &__line &__title-left {
-        order: 2;
-        margin-right: 0;
-        margin-left: 1em;
-      }
+.line.line-right {
+  order: 2;
+  margin-right: 0;
+  margin-left: 1em;
 }
-
-
-.wrapper {
-    display: flex;
-
-        &__image {
-        width: 300px;
-        }
-        
-        &__text {
-        max-width: 700px;
-        text-align: center;
-        padding: 20px;
-        }
-        &__text p {
-        text-align: justify;
-        padding: 20px;
-        line-height: 1.4em;
-        }
-}
-
 
 /* Hero Section */
 .hero {
@@ -154,12 +137,12 @@ header {
   align-items: center;
   background: #97d279;
 
-  &__img {
+  &__img__src {
     display: block;
     height: auto;
     width: 15.5em;
   }
-  
+
   &__text {
     max-width: 700px;
     text-align: center;
@@ -171,45 +154,67 @@ header {
 /* Featured Section */
 .featured {
   padding: 20px;
-  }
-  &__wrapper {
-    flex-wrap: wrap;
+}
+.featured .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.wrapper--featured {
+    
     &__image {
-        width: 300px;
-      }
-  }
+     width: 300px;
+    }   
+    &__text {
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+    
+        &__justified {
+        text-align: justify;
+        padding: 20px;
+        line-height: 1.4em;
+        }
+    }
 }
 
 
 /* About Section */
 
-.about {
-    background-color: #97d279;
-    padding: 20px;
-    display: flex;
-
-    &__wrapper {
-      
-     &__video {
-        position: relative;
-        padding-bottom: 33.25%;
-        overflow: hidden;
-        align-self: center;
-        flex: 2 0 55%;
-        margin: 1.4em 0;
-      }
-      
-      &__video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
+.text-about {
+  max-width: 700px;
+  text-align: center;
+  padding: 20px;
 }
-  
+.text-about p {
+  text-align: justify;
+  padding-bottom: 1em;
+  line-height: 1.4em;
+}
+.about {
+  background-color: #97d279;
+  padding: 20px;
+}
+.about .wrapper {
+  display: flex;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 33.25%;
+  overflow: hidden;
+  align-self: center;
+  flex: 2 0 55%;
+  margin: 1.4em 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* Contact Section */
 .contact {
@@ -219,7 +224,7 @@ header {
   display: flex;
   flex-wrap: wrap;
 }
-.form-wrapper,
+.wrapper__form,
 .contact-wrapper {
   padding: 20px;
 }
@@ -227,3 +232,155 @@ header {
 .copy-wrapper {
   padding-left: 20px;
 }
+
+
+
+
+
+// header {
+//   display: flex;
+//   justify-content: space-around;
+//   position: fixed;
+//   width: 100%;
+//   z-index: 1;
+//   padding: 20px;
+//   background-color: #c0eea9;
+//   height: 120px;
+//   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+//   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+//   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
+
+//   &__brand-logo__img {
+//     width: auto;
+//     padding-top: 20px;
+//     height: 7.5em;
+//   }
+// }
+
+// .title {
+//     display: flex;
+//     align-items: center;
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+//     padding-bottom: 1em;
+
+//     &__line {
+//         width: 3em;
+//         height: 1px;
+//         background-color: #000;
+//         margin-right: 1em;
+//       }
+
+//     &__title-left {
+//         justify-content: flex-end;
+//     }
+
+//     &__line &__title-left {
+//         order: 2;
+//         margin-right: 0;
+//         margin-left: 1em;
+//       }
+// }
+
+
+// .wrapper {
+//     display: flex;
+
+//         &__image {
+//         width: 300px;
+//         }
+        
+//         &__text {
+//         max-width: 700px;
+//         text-align: center;
+//         padding: 20px;
+//         }
+//         &__text p {
+//         text-align: justify;
+//         padding: 20px;
+//         line-height: 1.4em;
+//         }
+// }
+
+
+// /* Hero Section */
+// .hero {
+//   padding: 20px;
+//   display: flex;
+//   height: 100vh;
+//   align-items: center;
+//   background: #97d279;
+
+//   &__img {
+//     display: block;
+//     height: auto;
+//     width: 15.5em;
+//   }
+  
+//   &__text {
+//     max-width: 700px;
+//     text-align: center;
+//     padding: 20px;
+//   }
+// }
+
+
+// /* Featured Section */
+// .featured {
+//   padding: 20px;
+//   }
+//   &__wrapper {
+//     flex-wrap: wrap;
+
+//     &__image {
+//         width: 300px;
+//       }
+//   }
+// }
+
+
+// /* About Section */
+
+// .about {
+//     background-color: #97d279;
+//     padding: 20px;
+//     display: flex;
+
+//     &__wrapper {
+      
+//      &__video {
+//         position: relative;
+//         padding-bottom: 33.25%;
+//         overflow: hidden;
+//         align-self: center;
+//         flex: 2 0 55%;
+//         margin: 1.4em 0;
+//       }
+      
+//       &__video iframe {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+// }
+  
+
+// /* Contact Section */
+// .contact {
+//   padding: 20px;
+// }
+// .wrapper .contact {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+// .form-wrapper,
+// .contact-wrapper {
+//   padding: 20px;
+// }
+
+// .copy-wrapper {
+//   padding-left: 20px;
+// }
