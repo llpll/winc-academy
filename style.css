@@ -101,6 +101,7 @@ input {
 }
 
 /* Pas alleen de onderstaande regels aan */
+/* variables &  mixes */
 /* Header */
 header {
   display: -webkit-box;
@@ -112,7 +113,7 @@ header {
   width: 100%;
   z-index: 1;
   padding: 20px;
-  background-color: #c0eea9;
+  background-color: #97d279;
   height: 120px;
   -webkit-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
@@ -148,7 +149,7 @@ header {
 
 /* Hero Section */
 .hero {
-  padding: 20px;
+  padding: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

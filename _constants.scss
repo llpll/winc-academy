@@ -1,0 +1,11 @@
+/* variables &  mixes */
+
+$background-color: #97d279;
+$padding-hero: 300px;
+$container-padding: 20px;
+
+@mixin text-wrapper {
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+}
