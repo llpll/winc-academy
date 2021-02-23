@@ -156,8 +156,10 @@ header {
 /* Featured Section */
 .featured {
   padding: $container-padding;
+  
 }
-.featured .wrapper {
+
+.featured .wrapper--featured {
   display: flex;
   flex-wrap: wrap;
 }
@@ -222,7 +224,7 @@ header {
 .contact {
   padding: $container-padding;
 }
-.wrapper .contact {
+.wrapper--contact .contact {
   display: flex;
   flex-wrap: wrap;
 }

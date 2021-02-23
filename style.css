@@ -177,7 +177,7 @@ header {
   padding: 20px;
 }
 
-.featured .wrapper {
+.featured .wrapper--featured {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +251,7 @@ header {
   padding: 20px;
 }
 
-.wrapper .contact {
+.wrapper--contact .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
