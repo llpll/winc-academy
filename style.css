@@ -103,7 +103,7 @@ input {
 /* Pas alleen de onderstaande regels aan */
 /* variables &  mixes */
 /* Header */
-header {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,13 +119,15 @@ header {
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
 }
 
-.header__brand-logo__img {
+.header__img {
   width: auto;
   padding-top: 20px;
   height: 7.5em;
 }
 
 .title-left {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,7 +162,7 @@ header {
   background: #97d279;
 }
 
-.hero__img__src {
+.hero__img {
   display: block;
   height: auto;
   width: 15.5em;
@@ -177,7 +179,7 @@ header {
   padding: 20px;
 }
 
-.featured .wrapper--featured {
+.featured__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,17 +187,17 @@ header {
       flex-wrap: wrap;
 }
 
-.wrapper--featured__image {
+.featured__image {
   width: 300px;
 }
 
-.wrapper--featured__text {
+.featured__text {
   max-width: 700px;
   text-align: center;
   padding: 20px;
 }
 
-.wrapper--featured__text__justified {
+.featured__text__justified {
   text-align: justify;
   padding: 20px;
   line-height: 1.4em;
@@ -207,25 +209,25 @@ header {
   padding: 20px;
 }
 
-.wrapper--about {
+.about__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.wrapper--about__info {
+.about__info {
   max-width: 700px;
   text-align: center;
   padding: 20px;
 }
 
-.wrapper--about__info__text {
+.about__info__text {
   text-align: justify;
   padding-bottom: 1em;
   line-height: 1.4em;
 }
 
-.wrapper--about__video {
+.about__video {
   position: relative;
   padding-bottom: 33.25%;
   overflow: hidden;
@@ -238,7 +240,7 @@ header {
   margin: 1.4em 0;
 }
 
-.wrapper--about__video__iframe {
+.about__video__iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -251,15 +253,11 @@ header {
   padding: 20px;
 }
 
-.wrapper--contact .contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+.contact__form {
+  padding: 20px;
 }
 
-.wrapper--contact {
-  padding: 20px;
+.contact__copyright {
+  padding-left: 20px;
 }
 /*# sourceMappingURL=style.css.map */

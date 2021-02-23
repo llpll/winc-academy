@@ -86,7 +86,7 @@ input {
 @import './constants';
 
 /* Header */
-header {
+.header {
   display: flex;
   justify-content: space-around;
   position: fixed;
@@ -99,15 +99,16 @@ header {
   -moz-box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 7px -9px rgba(0, 0, 0, 0.75);
 
-}
-
-.header__brand-logo__img {
+  &__img {
     width: auto;
     padding-top: 20px;
     height: 7.5em;
   }
+}
+
 
 .title-left {
+  align-self: flex-start;
   display: flex;
   align-items: center;
   text-transform: uppercase;
@@ -123,15 +124,6 @@ header {
   }
 }
 
-// .title.title--left {
-//   justify-content: flex-start;
-// }
-
-// .line.line-right {
-//   order: 2;
-//   margin-right: 0;
-//   margin-left: 1em;
-// }
 
 /* Hero Section */
 .hero {
@@ -141,7 +133,7 @@ header {
   align-items: center;
   background: $background-color;
 
-  &__img__src {
+  &__img {
     display: block;
     height: auto;
     width: 15.5em;
@@ -156,28 +148,26 @@ header {
 /* Featured Section */
 .featured {
   padding: $container-padding;
+
+  &__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    width: 300px;
+   }  
+    
+   &__text {
+       @include text-wrapper;
+   
+       &__justified {
+       text-align: justify;
+       padding: 20px;
+       line-height: 1.4em;
+       }
+   }
   
-}
-
-.featured .wrapper--featured {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.wrapper--featured {
-    
-    &__image {
-     width: 300px;
-    }   
-    &__text {
-        @include text-wrapper;
-    
-        &__justified {
-        text-align: justify;
-        padding: 20px;
-        line-height: 1.4em;
-        }
-    }
 }
 
 
@@ -186,10 +176,10 @@ header {
 .about {
     background-color: $background-color;
     padding: $container-padding;
-  }
-  
-.wrapper--about {
-    display: flex;
+
+    &__wrapper {
+        display: flex;
+    }
 
     &__info {
         @include text-wrapper;
@@ -218,23 +208,23 @@ header {
         }
     }
 }
+  
+
 
 
 /* Contact Section */
 .contact {
   padding: $container-padding;
-}
-.wrapper--contact .contact {
-  display: flex;
-  flex-wrap: wrap;
+  
+    &__form {
+        padding: $container-padding;
+    }
+
+    &__copyright {
+        padding-left: 20px;
+    }
 }
 
-.wrapper--contact{
-  padding: $container-padding;
-}
 
-// .wrapper--copy {
-//     padding-left: 20px;
-//   }
 
 
