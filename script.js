@@ -19,11 +19,11 @@ console.log(multiplication);
 let age = 30;
 console.log(age)
 
-let leeftijd = typeof 30;
-console.log(leeftijd);
+let leeftijd = 30;
+console.log(typeof leeftijd);
 
-let leeftijdString = typeof '30';
-console.log(leeftijdString);
+let leeftijdString = '30';
+console.log(typeof leeftijdString);
 
 
 
