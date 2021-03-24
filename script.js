@@ -1,32 +1,17 @@
-console.log("Hello Winc Academy")
+const pizzaRecipe = function() {
+    console.log ('make dough');
+    console.log ('make sauce');
+    console.log ("bake pizza");
+};
 
-let name = 'Elena';
-console.log('Elena');
+pizzaRecipe();
+pizzaRecipe();
+pizzaRecipe();
 
-let number = 4 + 4;
-console.log(number);
+const sushiRecipe = function() {
+    console.log ('prepare rice');
+    console.log ('rol vegetables');
+};
 
-let string = '4 + 4';
-console.log(string);
-
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
-
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
-
-
+sushiRecipe();
+sushiRecipe();
