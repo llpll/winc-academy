@@ -1,32 +1,31 @@
-console.log("Hello Winc Academy")
-
-let name = 'Elena';
-console.log('Elena');
-
-let number = 4 + 4;
-console.log(number);
-
-let string = '4 + 4';
-console.log(string);
-
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
+// Checking if a number is big
+const numberValue = function(number) {
+    if (number > 100) {
+        return true;
+    } 
+    return false;
+};
+console.log(numberValue(67));
 
 
-let age = 30;
-console.log(age)
+// Bouncer at a club
+const clubAdmission = function(age, noPeopleInside) {
+    const maxPeople = 100;
+    if (age < 18) {
+        return "this is a club for adults";
+    }
+    if (noPeopleInside >= maxPeople) {
+        return "it's too busy now, come back later";
+    }
+    return "come in";
+};
+ console.log(clubAdmission(21, 101));
 
-let leeftijd = 30;
-console.log(typeof leeftijd);
 
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+// Calculating the average
+const calculteAverage = function(no1, no2, no3, no4, no5) {
+    let result = (no1 + no2 + no3 + no4 + no5) / 5;
+    return Math.round (result);
+};
 
-
-
-
-
-
+console.log(calculteAverage(3,4,10,7,8));
