@@ -29,22 +29,22 @@ console.log(evaluations);
 evaluations = 7, 10, 9;
 console.log(evaluations);
 
+
 // deel 2 > arrays
 let colorPicker = ['green', 'blue', 'red'];
 console.log(colorPicker.length);
 console.log(colorPicker[0]);
 console.log(colorPicker[2]);
 
-let allColors = colorPicker.push('yellow');
-console.log(colorPicker);
-console.log(allColors);
-
-let plusNumber = colorPicker.push(1);
+colorPicker.push('yellow');
 console.log(colorPicker);
 
-let plusObject = colorPicker.push({ greeting: 'hi ik ben een object'})
+colorPicker.push(1);
 console.log(colorPicker);
-console.log(colorPicker['hi ik ben een object']);
+
+colorPicker.push({ greeting: 'hi ik ben een object'})
+console.log(colorPicker);
+console.log(colorPicker[colorPicker.length - 1].greeting);
 
 
 
