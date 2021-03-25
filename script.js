@@ -19,9 +19,9 @@ console.log(calculation(3, 4));
 
 
 // arrow
-const calculation2 = (num1, num2) => {
-    const num1Multiplicated = num1 * num1;
-    const num2Multiplicated = num2 * num2;
+const calculation2 = (number1, number2) => {
+    const num1Multiplicated = number1 * number1;
+    const num2Multiplicated = number2 * number2;
     return (num1Multiplicated + num2Multiplicated) * (num1Multiplicated + num2Multiplicated);
 };
 console.log(calculation2(3, 4));
