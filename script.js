@@ -1,32 +1,21 @@
-console.log("Hello Winc Academy")
 
-let name = 'Elena';
-console.log('Elena');
+const btn = document.getElementById('mybutton')
 
-let number = 4 + 4;
-console.log(number);
+const btnAlert = () => {
+    alert('You clicked me!');
+};
+btn.addEventListener('click', btnAlert);
 
-let string = '4 + 4';
-console.log(string);
+const bckrBtn = document.querySelector('.blue-background:nth-child(2)')
 
-let substraction = 90 - 10;
-console.log(substraction);
+// const changeColor = () => {
+// bckrBtn.classList.add ('red-background') ;
+// };
+// bckrBtn.addEventListener ('click', changeColor);
 
-let multiplication = 3 * 20;
-console.log(multiplication);
-
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
+const toggleColor = () => {
+    bckrBtn.classList.toggle('red-background');
+};
+bckrBtn.addEventListener('click', toggleColor);
 
 

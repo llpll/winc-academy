@@ -1,0 +1,23 @@
+#mybutton {
+    background-color: lightpink;
+    font-size: 21px;
+    padding: 8px 24px;
+    border-style: none;
+    margin: 60px;
+}
+
+body button:nth-child(2) {
+    background-color:lightpink;
+    font-size: 21px;
+    padding: 8px 24px;
+    border-style: none;
+    margin: 60px;
+}
+
+.blue-background {
+    background-color: blue;
+    }
+
+.red-background {
+    background-color: red;
+    }
