@@ -1,32 +1,89 @@
-console.log("Hello Winc Academy")
-
-let name = 'Elena';
-console.log('Elena');
-
-let number = 4 + 4;
-console.log(number);
-
-let string = '4 + 4';
-console.log(string);
-
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
+let navToggle = document.getElementById(".nav-toggle img")
+let nav = document.querySelectorAll(".nav-items");
+let navItems = document.getElementById("test");
+let liArray = document.querySelectorAll("li");
+let radios = document.getElementById("input");
+// let navItems2 = document.getElementById("test")
 
 
-let age = 30;
-console.log(age)
+let toggleNavStatus = false;
 
-let leeftijd = 30;
-console.log(typeof leeftijd);
+window.onload=function(){
+    if (toggleNavStatus === false) {
+        // console.log(navItems);
+        // console.log(navItems2);
+        navItems.style.visibility = "visible";
+        nav.style.width = "250px";
+        // navItmes.style.opacity = "1";
+        console.log(liArray);
 
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+        toggleNavStatus = true;
+    }
+
+    else if (toggleNavStatus === true) {
+        nav.style.width = "50px";
+        // liArray[i].style.opacity = "0";
+        navItems.style.visibility = "hidden";
+
+        toggleNavStatus = false;
+    }
+}
+
+
+/*   
+let toggleNav = function () {
+    if (toggleNavStatus === false) {
+        console.log(navItems);
+        console.log(navItems2);
+        navItems2.style.visibility = "visible";
+        nav.style.width = "250px";
+        // navItmes.style.opacity = "1";
+        console.log(liArray);
+
+        toggleNavStatus = true;
+    }
+
+    else if (toggleNavStatus === true) {
+        nav.style.width = "50px";
+        // liArray[i].style.opacity = "0";
+        navItems2.style.visibility = "hidden";
+
+        toggleNavStatus = false;
+    }
+}
+
+navToggle.addEventListener('click', toggleNav); */
 
 
 
 
+
+
+
+
+const resetRadios = function () {
+    for (var i in radios) {
+        radios[i].checked = false;
+    }
+}
+
+const changeColor = function (e) {
+    // resetRadios();
+    let li = e.target;
+    let radio = li.querySelector("input");
+    radio.checked = true;
+    let color = radio.value;
+
+    var body = document.body;
+    body.className = "";
+
+    if (color !== 'home') {
+        body.classList.add(color);
+    }
+}
+
+for (var i = 0; i < liArray.length; i++) {
+    liArray[i].addEventListener('click', changeColor);
+}
 
 

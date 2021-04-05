@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+.nav-toggle {
+    position: fixed;
+    /* left: 40px;
+    top: 40px; */
+    width: 50px;
+    background-color: lightgray;
+    padding: 40px;
+   /*  background-image: url('hamburger_menu.png');
+    width: 60px;
+    height: 100%; 
+    background-repeat: no-repeat; 
+    background-size: 80%; 
+    background-position: top;  */
+    cursor: pointer;
+}
+/* 
+.nav-toggle:hover {
+transition: ;
+opacity: 80%;
+} */
+
+
+.nav-items ul {
+
+    margin-top: 0;
+    list-style-type: none;
+    position: fixed;
+    top: 130px;
+    width: 130px;
+    height: calc(100vh - 100px);
+    padding: 0;
+    background-color: white;
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+  
+   
+}
+
+/* .nav-items ul li {
+    padding-left: 10px;
+    display: flex;
+    flex-flow: nowrap row;
+    align-content: center; 
+    cursor: pointer;
+
+} */
+
+.nav-items ul li {
+    display: inline;
+   text-decoration: none;
+   color: darkslategrey;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 30px;
+   line-height: 70px;
+   font-weight: 700;
+   padding: 20px 10px 20px 10px;
+   white-space: nowrap;
+   cursor: pointer;
+   /* opacity: 0; */
+   transition: all 0.35s ease-in-out;
+   
+}
+
+input {
+    align-self: center;
+}
+
+.nav-items li:nth-child(1) {
+    background-color: lightgray;
+}
+
+.nav-items li:nth-child(2), .red {
+    background-color: orangered;
+}
+
+.nav-items li:nth-child(3), .orange {
+    background-color: orange;
+}
+
+.nav-items li:nth-child(4), .yellow {
+    background-color: yellow;
+}
+
+.nav-items li:nth-child(5), .pink {
+    background-color: pink;
+}
+
+.nav-items li:nth-child(6), .purple {
+    background-color: plum;
+}
+
+.nav-items li:nth-child(7), .blue {
+    background-color: lightskyblue;
+}
+
