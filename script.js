@@ -1,65 +1,9 @@
-let navToggle = document.getElementById(".nav-toggle img")
-let nav = document.querySelectorAll(".nav-items");
-let navItems = document.getElementById("test");
+// background color toggle
+let nav = document.querySelector(".nav-items");
+let navItems = document.querySelector(".nav-items li");
 let liArray = document.querySelectorAll("li");
-let radios = document.getElementById("input");
-// let navItems2 = document.getElementById("test")
-
-
-let toggleNavStatus = false;
-
-window.onload=function(){
-    if (toggleNavStatus === false) {
-        // console.log(navItems);
-        // console.log(navItems2);
-        navItems.style.visibility = "visible";
-        nav.style.width = "250px";
-        // navItmes.style.opacity = "1";
-        console.log(liArray);
-
-        toggleNavStatus = true;
-    }
-
-    else if (toggleNavStatus === true) {
-        nav.style.width = "50px";
-        // liArray[i].style.opacity = "0";
-        navItems.style.visibility = "hidden";
-
-        toggleNavStatus = false;
-    }
-}
-
-
-/*   
-let toggleNav = function () {
-    if (toggleNavStatus === false) {
-        console.log(navItems);
-        console.log(navItems2);
-        navItems2.style.visibility = "visible";
-        nav.style.width = "250px";
-        // navItmes.style.opacity = "1";
-        console.log(liArray);
-
-        toggleNavStatus = true;
-    }
-
-    else if (toggleNavStatus === true) {
-        nav.style.width = "50px";
-        // liArray[i].style.opacity = "0";
-        navItems2.style.visibility = "hidden";
-
-        toggleNavStatus = false;
-    }
-}
-
-navToggle.addEventListener('click', toggleNav); */
-
-
-
-
-
-
-
+let radios = document.querySelector("input");
+let chosenColorContainer = document.querySelector('#chosen-color');
 
 const resetRadios = function () {
     for (var i in radios) {
@@ -79,11 +23,50 @@ const changeColor = function (e) {
 
     if (color !== 'home') {
         body.classList.add(color);
+        chosenColorContainer.innerHTML = 'to play a color game';
     }
+
+    chosenColorContainer.innerHTML = "You've picked " + color;
+    closeMenu();
 }
+
 
 for (var i = 0; i < liArray.length; i++) {
     liArray[i].addEventListener('click', changeColor);
 }
 
 
+
+// menu animation
+let sidebarBtn = document.querySelector('#btn');
+let pageContent = document.querySelector('#message');
+
+sidebarBtn.addEventListener('click', function () {
+
+    if (this.classList.contains('active')) {
+        this.classList.remove('active');
+        nav.classList.remove('active');
+    } else {
+        this.classList.add('active');
+        nav.classList.add('active');
+    }
+});
+
+let closeMenu = function() {
+    if (nav.classList.contains('active')) {
+        sidebarBtn.classList.remove('active');
+        nav.classList.remove('active');
+    }
+}
+
+pageContent.addEventListener('click', function() {
+    closeMenu();
+});
+
+window.addEventListener('keydown', function (event) {
+
+    if (nav.classList.contains('active') && event.keyCode === 27) {
+        sidebarBtn.classList.remove('active');
+        nav.classList.remove('active');
+    }
+});

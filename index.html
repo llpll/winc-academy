@@ -8,41 +8,50 @@
 </head>
 
 <body>
-    <nav class="nav-toggle">
-        <img class="nav-toggle-btn" src="hamburger_menu.png" width="50px" alt="hamburger icon" />
+    <nav>
+        <div id="btn">
+            <div id="top"></div>
+            <div id="middle"></div>
+            <div id="bottom"></div>
+        </div>
+
+        <div class="nav-items">
+            <ul id="items">
+                <li class="item">
+                    <input type="radio" id="home" name="color" value="white" />
+                    <span>home of colors</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="red" name="color" value="red" />
+                    <span>color red</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="orange" name="color" value="orange" />
+                    <span>color orange</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="yellow" name="color" value="yellow" />
+                    <span>color yellow</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="pink" name="color" value="pink" />
+                    <span>color pink</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="purple" name="color" value="purple" />
+                    <span>color purple</span>
+                </li>
+                <li class="item">
+                    <input type="radio" id="blue" name="color" value="blue" />
+                    <span>color blue</span>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="nav-items">
-        <ul id="test">
-            <li class="li">
-                <input type="radio" id="home" name="color" value="home" />
-                home of colors
-            </li>
-            <li class="red-li">
-                <input type="radio" id="red" name="color" value="red" />
-                color red
-            </li>
-            <li>
-                <input type="radio" id="orange" name="color" value="orange" />
-                color orange
-            </li>
-            <li>
-                <input type="radio" id="yellow" name="color" value="yellow" />
-                color yellow
-            </li>
-            <li>
-                <input type="radio" id="pink" name="color" value="pink" />
-                color pink
-            </li>
-            <li>
-                <input type="radio" id="purple" name="color" value="purple" />
-                color purple
-            </li>
-            <li>
-                <input type="radio" id="blue" name="color" value="blue" />
-                color blue
-            </li>
-        </ul>
+    <div id="message">
+        <p>Welcome to the color toggle!</p>
+        <p><span id="chosen-color">Pick a color from the menu</span></p>
     </div>
 
 
