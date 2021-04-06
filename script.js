@@ -12,7 +12,6 @@ const resetRadios = function () {
 }
 
 const changeColor = function (e) {
-    // resetRadios();
     let li = e.target;
     let radio = li.querySelector("input");
     radio.checked = true;
@@ -41,7 +40,7 @@ for (var i = 0; i < liArray.length; i++) {
 let sidebarBtn = document.querySelector('#btn');
 let pageContent = document.querySelector('#message');
 
-sidebarBtn.addEventListener('click', function () {
+sidebarBtn.addEventListener('mouseover', function () {
 
     if (this.classList.contains('active')) {
         this.classList.remove('active');
@@ -52,20 +51,17 @@ sidebarBtn.addEventListener('click', function () {
     }
 });
 
-let closeMenu = function() {
+let closeMenu = function () {
     if (nav.classList.contains('active')) {
         sidebarBtn.classList.remove('active');
         nav.classList.remove('active');
     }
 }
 
-pageContent.addEventListener('click', function() {
-    closeMenu();
-});
 
 window.addEventListener('keydown', function (event) {
 
-    if (nav.classList.contains('active') && event.keyCode === 27) {
+    if (nav.classList.contains('active') && event.keydown === 27) {
         sidebarBtn.classList.remove('active');
         nav.classList.remove('active');
     }
