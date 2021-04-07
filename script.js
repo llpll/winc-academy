@@ -1,31 +1,34 @@
-console.log("Hello Winc Academy")
+/* const ikRockArrowFunctions = function () {
+    console.log("Joe, ik rock de arrow functions!");
+  };
+  ikRockArrowFunctions() */
 
-let name = 'Elena';
-console.log('Elena');
-
-let number = 4 + 4;
-console.log(number);
-
-let string = '4 + 4';
-console.log(string);
-
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
+const ikRockArrowFunctions = () => {
+    console.log("Joe, ik rock de arrow functions!");
+  };
+  ikRockArrowFunctions()
 
 
-let age = 30;
-console.log(age)
+/*   const fivePlusSeven = function () {
+    return 5 + 7
+  };
+  fivePlusSeven(); */
 
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+const fivePlusSeven = () => 5 + 7
+    console.log(fivePlusSeven());
 
 
+let myFunction = (a, b) => a + b
+    console.log(myFunction(3,7));
+
+
+let addFive = a => a + 5
+  console.log(addFive(10));
+
+
+let createObject = () => ({greeting: "hoi"})
+  console.log(createObject());
+  
 
 
 
