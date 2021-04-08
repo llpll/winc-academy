@@ -1,32 +1,26 @@
-console.log("Hello Winc Academy")
+const array = [
+  { name: "N. Armstrong", profession: "spacecowboy", age: 89 },
+  { name: "H. de Haan", profession: "kippen hypnotiseur", age: 59 },
+  { name: "A. Curry", profession: "kikvorsman", age: 32 },
+  { name: "F. Vonk", profession: "slangenmelker", age: 36 },
+  { name: "B. Bunny", profession: "konijnen uitlaatservice", age: 27 },
+  { name: "Dr.Evil", profession: "digital overlord", age: 56 }
+];
 
-let name = 'Elena';
-console.log('Elena');
+const currYear = new Date().getFullYear();
 
-let number = 4 + 4;
-console.log(number);
+for (let person of array) {
+  console.log("Dit is de gehele persoon:", person);
+  console.log("Meet " + person.name);
 
-let string = '4 + 4';
-console.log(string);
+  let birthYear = currYear - person.age;
+  console.log(person.name + ' was born in ' + birthYear);
 
-let substraction = 90 - 10;
-console.log(substraction);
+  console.log(person.name + ' is a ' + person.profession);
 
-let multiplication = 3 * 20;
-console.log(multiplication);
+  if (person.age > 50) {
+    console.log(person.name + " is older than 50");
+  }
 
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
-
+}
 
