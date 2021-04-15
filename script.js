@@ -1,61 +1,239 @@
-const addTheWordCool = function (array) {
-  array.push('cool');
+const superheroes = [
+  {
+    "name": "Batman",
+    "publisher": "DC Comics",
+    "alter_ego": "Bruce Wayne",
+    "first_appearance": "Detective Comics #27",
+    "weight": "210"
+  },
+  {
+    "name": "Superman",
+    "publisher": "DC Comics",
+    "alter_ego": "Kal-El",
+    "first_appearance": "Action Comics #1",
+    "weight": "220"
+  },
+  {
+    "name": "Flash",
+    "publisher": "DC Comics",
+    "alter_ego": "Jay Garrick",
+    "first_appearance": "Flash Comics #1",
+    "weight": "195"
+  },
+  {
+    "name": "Green Lantern",
+    "publisher": "DC Comics",
+    "alter_ego": "Alan Scott",
+    "first_appearance": "All-American Comics #16",
+    "weight": "186"
+  },
+  {
+    "name": "Green Arrow",
+    "publisher": "DC Comics",
+    "alter_ego": "Oliver Queen",
+    "first_appearance": "All-American Comics #16",
+    "weight": "195"
+  },
+  {
+    "name": "Wonder Woman",
+    "publisher": "DC Comics",
+    "alter_ego": "Princess Diana",
+    "first_appearance": "The Incredible Hulk #180",
+    "weight": "165"
+  },
+  {
+    "name": "Blue Beetle",
+    "publisher": "DC Comics",
+    "alter_ego": "Dan Garret",
+    "first_appearance": "Mystery Men Comics #1",
+    "weight": "145"
+  },
+  {
+    "name": "Spider Man",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Peter Parker",
+    "first_appearance": "Amazing Fantasy #15",
+    "weight": "167"
+  },
+  {
+    "name": "Captain America",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Steve Rogers",
+    "first_appearance": "Captain America Comics #1",
+    "weight": "220"
+  },
+  {
+    "name": "Iron Man",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Tony Stark",
+    "first_appearance": "Tales of Suspense #39",
+    "weight": "250"
+  },
+  {
+    "name": "Thor",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Thor Odinson",
+    "first_appearance": "Journey into Myster #83",
+    "weight": "200"
+  },
+  {
+    "name": "Hulk",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Bruce Banner",
+    "first_appearance": "The Incredible Hulk #1",
+    "weight": "1400"
+  },
+  {
+    "name": "Wolverine",
+    "publisher": "Marvel Comics",
+    "alter_ego": "James Howlett",
+    "first_appearance": "The Incredible Hulk #180",
+    "weight": "200"
+  },
+  {
+    "name": "Daredevil",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Matthew Michael Murdock",
+    "first_appearance": "Daredevil #1",
+    "weight": "200"
+  },
+  {
+    "name": "Silver Surfer",
+    "publisher": "Marvel Comics",
+    "alter_ego": "Norrin Radd",
+    "first_appearance": "The Fantastic Four #48",
+    "weight": "unknown"
+  }
+]
 
-  return array;
-}
-console.log("Add cool:", addTheWordCool(["nice", "awesome", "tof"]));
-// resultaat: ["nice", "awesome", "tof", "cool"]
+// 1 Maak een array van alle superhelden namen
+const superheroesNames = function (array) {
+  return array.map(superhero => {
+    return superhero.name;
+  });
+};
+console.log("list of superheroes names", superheroesNames(superheroes));
 
 
 
-const amountOfElementsInArray = function (array) {
-  return array.length;
-}
-console.log(amountOfElementsInArray(['appels', 'peren', 'citroenen']));
-// 3
+// 2 Maak een array van alle "lichte" superhelden (< 190 pounds)
 
 
-const selectBelgiumFromBenelux = function (array) {
-  return array[0];
-}
-console.log(selectBelgiumFromBenelux(["Belgie", "Nederland", "Luxemburg"]));
-// resultaat: "Belgie"
+const lightSuperHeroes = superheroes.filter(superhero => superhero.weight < 190);
+
+console.log("shortlist light superheroes", lightSuperHeroes);
 
 
-const lastElementInArray = function (array) {
-  return array[array.length - 1];
-}
-console.log(lastElementInArray(["Haas", "Cavia", "Kip", "Schildpad"]));
-// resultaat: "Schildpad"
+// const lightSuperHeroes2 = function(array) {
+//       return array.filter(superhero => {
+//        return superhero.weight < 190;
+//       });
+//     };
+
+//   console.log("list of light superheroes", lightSuperHeroes2(superheroes));
 
 
 
-const presidents = ["Trump", "Obama", "Bush", "Clinton"]
+// 3 alleen maar de namen van de superhelden die 200 pounds wegen
 
-const impeachTrumpSlice = function (array) {
-  return res = array.slice(1);
-}
+// const NamesTweeHondredPounds = superheroes
+//   .filter (superhero => superhero.weight === 200)
+//   .map (superhero => superhero.name);
 
-const impeachTrumpSplice = function (array) {
-  array.splice(0, 1);
-
-  return array;
-}
-
-console.log(impeachTrumpSlice(presidents)); // ["Obama", "Bush", "Clinton"]
-console.log(impeachTrumpSplice(presidents)); // ["Obama", "Bush", "Clinton"]
+//   console.log(NamesTweeHondredPounds);
 
 
 
-const stringsTogether = function (array) {
-  return array.join(" ");
-}
-console.log(stringsTogether(['Winc', 'Academy', 'is', 'leuk', ';-}']))
-//resultaat: "Winc Academy is leuk ;-}"
+const NamesTweeHondredPounds = function (array) {
+  return array.filter(superhero => {
+    return superhero.weight === 200;
+  });
+};
+
+console.log(NamesTweeHondredPounds(superheroes));
 
 
-const combineArrays = function (array1, array2) {
-  return array1.concat(array2);
-}
-console.log(combineArrays([1, 2, 3], [4, 5, 6]));
-// resultaat: [1,2,3,4,5,6]
+
+// 4 Maak een array met alle comics waar de superhelden hun "first appearances" hebben gehad
+
+const firstAppearanceMovies = function (array) {
+  return array.map(superhero => {
+    return superhero.first_appearance;
+  });
+};
+console.log("first appearance movies", firstAppearanceMovies(superheroes));
+
+
+
+// 5 Maak een array met alle superhelden van DC Comics. Is dat gelukt? 
+// Herhaal de bovenstaande functie dan en maak ook een array met alle superhelden van Marvel Comics.
+
+const filterByPublisher1 = superheroes.filter(superhero => superhero.publisher === "DC Comics");
+const filterByPublisher2 = superheroes.filter(superhero => superhero.publisher === "Marvel Comics");
+
+console.log("filter by DC Comics", filterByPublisher1);
+console.log("filter by Marvel Comics", filterByPublisher2);
+
+
+// 6 Tel het gewicht van alle superhelden van DC Comics bij elkaar op. Let op! 
+// Het gewicht van welk datatype is dat? nummer of string? hebben alle superhelden wel een gewicht?
+
+// const superheroesTotalWeight = superheroes
+//   .filter(superhero => superhero.publisher === "DC Comics")
+//   .reduce(
+//   (accumulator, currentValue) => accumulator + currentValue !== 'unknown'
+// );
+
+// console.log(superheroesTotalWeight);
+
+// const superheroesTotalWeight = superheroes
+//   .filter(superhero => superhero.publisher === "DC Comics")
+//   .reduce(function (accumulator, currentValue) {
+//     if (currentValue.weight !== 'unknown')
+//       return accumulator + currentValue;
+//   });
+
+
+const excludeUnknown = function (array) {
+  // array.filter(elem => elem.publisher === "DC Comics")
+  return array.filter(superhero => {
+    return superhero.weight !== 'unknown';
+  });
+};
+
+
+const superheroesTotalWeight = function (array) {
+  return array.reduce((accumulator, currentValue) => {
+    if (currentValue.weight !== undefined)
+      return 'accumulator + currentValue';
+  });
+};
+
+console.log('exclude unknown', excludeUnknown(superheroes));
+console.log('calculate weight', superheroesTotalWeight(superheroes));
+
+
+
+// 7 Doe hetzelfde met alle superhelden van Marvel Comics
+
+
+
+
+// 8 Bonus: zoek de zwaarste superheld!
+
+
+// const heaviestSuperhero = function (array) {
+//   return array.filter(superhero => {
+//     return superhero.weight === 200;
+//   });
+// };
+
+// console.log(heaviestSuperhero(superheroes));
+
+
+const heaviestOfThemAll = superheroes
+  .map(superhero => superhero.weight)
+  .filter(superhero => superhero.weight > 300);
+
+console.log('heaviest hero', heaviestOfThemAll);
+
