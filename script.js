@@ -117,45 +117,25 @@ console.log("list of superheroes names", superheroesNames(superheroes));
 
 
 // 2 Maak een array van alle "lichte" superhelden (< 190 pounds)
-
-
 const lightSuperHeroes = superheroes.filter(superhero => superhero.weight < 190);
 
 console.log("shortlist light superheroes", lightSuperHeroes);
 
 
-// const lightSuperHeroes2 = function(array) {
-//       return array.filter(superhero => {
-//        return superhero.weight < 190;
-//       });
-//     };
-
-//   console.log("list of light superheroes", lightSuperHeroes2(superheroes));
-
-
 
 // 3 alleen maar de namen van de superhelden die 200 pounds wegen
-
-// const NamesTweeHondredPounds = superheroes
-//   .filter (superhero => superhero.weight === 200)
-//   .map (superhero => superhero.name);
-
-//   console.log(NamesTweeHondredPounds);
-
-
-
 const NamesTweeHondredPounds = function (array) {
   return array.filter(superhero => {
-    return superhero.weight === 200;
+    console.log(superhero);
+    return superhero.weight === "200";
   });
 };
 
-console.log(NamesTweeHondredPounds(superheroes));
+console.log('200 only', NamesTweeHondredPounds(superheroes));
 
 
 
 // 4 Maak een array met alle comics waar de superhelden hun "first appearances" hebben gehad
-
 const firstAppearanceMovies = function (array) {
   return array.map(superhero => {
     return superhero.first_appearance;
@@ -167,7 +147,6 @@ console.log("first appearance movies", firstAppearanceMovies(superheroes));
 
 // 5 Maak een array met alle superhelden van DC Comics. Is dat gelukt? 
 // Herhaal de bovenstaande functie dan en maak ook een array met alle superhelden van Marvel Comics.
-
 const filterByPublisher1 = superheroes.filter(superhero => superhero.publisher === "DC Comics");
 const filterByPublisher2 = superheroes.filter(superhero => superhero.publisher === "Marvel Comics");
 
@@ -175,24 +154,20 @@ console.log("filter by DC Comics", filterByPublisher1);
 console.log("filter by Marvel Comics", filterByPublisher2);
 
 
+
 // 6 Tel het gewicht van alle superhelden van DC Comics bij elkaar op. Let op! 
 // Het gewicht van welk datatype is dat? nummer of string? hebben alle superhelden wel een gewicht?
+const totalGewicht = function (array) {
+  return array.reduce((accumulator, currentValue) => {
+    if (currentValue.weight !== 'unknown') {
+      accumulator += parseInt(currentValue.weight);
+    }
 
-// const superheroesTotalWeight = superheroes
-//   .filter(superhero => superhero.publisher === "DC Comics")
-//   .reduce(
-//   (accumulator, currentValue) => accumulator + currentValue !== 'unknown'
-// );
+    return accumulator;
+  }, 0);
+};
 
-// console.log(superheroesTotalWeight);
-
-// const superheroesTotalWeight = superheroes
-//   .filter(superhero => superhero.publisher === "DC Comics")
-//   .reduce(function (accumulator, currentValue) {
-//     if (currentValue.weight !== 'unknown')
-//       return accumulator + currentValue;
-//   });
-
+console.log('total gewicht', totalGewicht(superheroes));
 
 const excludeUnknown = function (array) {
   // array.filter(elem => elem.publisher === "DC Comics")
@@ -220,20 +195,31 @@ console.log('calculate weight', superheroesTotalWeight(superheroes));
 
 
 // 8 Bonus: zoek de zwaarste superheld!
+ 
+const test = function (array) {
+  return array.reduce((accumulator, currentValue) => {
+    if (accumulator < currentValue.weight && currentValue.weight !== 'unknown') {
+      return currentValue.weight;
+    }
+    return accumulator;
+
+  }, 0);
+};
+
+console.log('test ', test(superheroes)); 
 
 
-// const heaviestSuperhero = function (array) {
-//   return array.filter(superhero => {
-//     return superhero.weight === 200;
-//   });
-// };
+const heaviestOfThemAll = function (array) {
+  let max = 0;
+  let currHero = 0;
+  for (i in array) {
+    if (array[i].weight !== 'unknown' && array[i].weight > max) {
+      max = array[i].weight;
+      currHero = i;
+    }
+  }
 
-// console.log(heaviestSuperhero(superheroes));
+  return array[currHero];
+}
 
-
-const heaviestOfThemAll = superheroes
-  .map(superhero => superhero.weight)
-  .filter(superhero => superhero.weight > 300);
-
-console.log('heaviest hero', heaviestOfThemAll);
-
+console.log('heaviest', heaviestOfThemAll(superheroes));
