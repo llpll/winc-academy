@@ -195,7 +195,7 @@ console.log('calculate weight', superheroesTotalWeight(superheroes));
 
 
 // 8 Bonus: zoek de zwaarste superheld!
- 
+
 const test = function (array) {
   return array.reduce((accumulator, currentValue) => {
     if (accumulator < currentValue.weight && currentValue.weight !== 'unknown') {
@@ -206,7 +206,7 @@ const test = function (array) {
   }, 0);
 };
 
-console.log('test ', test(superheroes)); 
+console.log('test ', test(superheroes));
 
 
 const heaviestOfThemAll = function (array) {
