@@ -1,32 +1,26 @@
-console.log("Hello Winc Academy")
+const animalsBtns = document.querySelectorAll('.big-five-button');
+const spottedAnimalsList = document.getElementById('spotted-animals-list');
+const spottedAnimals = spottedAnimalsList.querySelectorAll('.spotted-animals-list-item');
+const btnRemoveAll = document.getElementById('remove-all-button');
+const btnRemove = document.getElementById('remove-first-item-button');
 
-let name = 'Elena';
-console.log('Elena');
+animalsBtns.forEach(el => el.addEventListener('click', event => {
+    spottedAnimal(event.target.innerHTML);
+}));
 
-let number = 4 + 4;
-console.log(number);
+btnRemove.addEventListener('click', event => {
+    var list = document.getElementById('spotted-animals-list');
+    var spottedAnimals = list.querySelectorAll('.spotted-animals-list-item');
+    list.removeChild(spottedAnimals[0]);
+});
 
-let string = '4 + 4';
-console.log(string);
+btnRemoveAll.addEventListener('click', event => {
+    spottedAnimalsList.innerHTML = '';
+});
 
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
-
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
-
-
+const spottedAnimal = function (animal) {
+    let elem = document.createElement('li');
+    elem.className = "spotted-animals-list-item";
+    elem.innerHTML = animal;
+    spottedAnimalsList.append(elem);
+}
