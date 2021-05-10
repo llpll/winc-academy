@@ -3,10 +3,47 @@
 
 <head>
     <title>Mijn eerste JavaScript speeltuin</title>
-    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" defer src="movies-script.js"></script>
+    <script type="text/javascript" defer src="script.js"></script>
+
 </head>
 
 <body>
+    <nav class="radiobtn-filter">
+        <div>
+            <input type="radio" id="nieuw" name="filter" value="nieuw" class="filter" />
+            <label for="nieuw">Laaste films, 2014 of nieuwer</label><br>
+        </div>
+
+        <div>
+            <input type="radio" id="avenger" name="filter" value="avenger" class="filter" />
+            <label for="avenger">Avenger films</label>
+        </div>
+
+        <div>
+            <input type="radio" id="xmen" name="filter" value="xmen" class="filter" />
+            <label for="xmen">X-Men films</label>
+        </div>
+
+        <div>
+            <input type="radio" id="princess" name="filter" value="princess" class="filter" />
+            <label for="princess">Princess films</label>
+        </div>
+
+        <div>
+            <input type="radio" id="batman" name="filter" value="batman" class="filter" />
+            <label for="batman">Batman films</label>
+        </div>
+    </nav>
+    <button onClick="resetFilter();">Reset filter</button>
+    <main>
+        <ul id="films-list">
+
+        </ul>
+    </main>
+
+
 </body>
 
 

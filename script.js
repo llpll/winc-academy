@@ -1,32 +1,74 @@
-console.log("Hello Winc Academy")
+const filters = document.querySelectorAll('.filter');
 
-let name = 'Elena';
-console.log('Elena');
+filters.forEach(filter => {
+    filter.addEventListener('click', event => {
+        switch (event.target.value) {
+            case 'avenger':
+                showMovies(filterGetAvengersMovies());
+                break;
+            case 'nieuw':
+                filterGetNewMovies();
+                break;
+            case 'xmen':
+                filterGetXmenMovies();
+                break;
+            case 'princess':
+                filterGetPrincessMovies();
+                break;
+            case 'batman':
+                filterGetBatmanMovies();
+                break;
+            default:
+            // code block
+        }
+        ;
+    });
 
-let number = 4 + 4;
-console.log(number);
+});
 
-let string = '4 + 4';
-console.log(string);
+let filterGetAvengersMovies = function () {
+    return movies.filter(movie => movie.Title.includes('Avengers'));
+};
 
-let substraction = 90 - 10;
-console.log(substraction);
+let filterGetNewMovies = function () {
+    console.log('i need new movies');
+};
 
-let multiplication = 3 * 20;
-console.log(multiplication);
+let filterGetPrincessMovies = function () {
+    console.log('i need [princess] movies');
+};
+
+let filterGetBatmanMovies = function () {
+    console.log('i need [batm] movies');
+};
+
+let filterGetXmenMovies = function () {
+    console.log('i need [xmens] movies');
+};
+const filmsList = document.getElementById('films-list');
+
+let createLiElement = function (movie) {
+    const listElement = document.createElement("li");
+    listElement.classList.add("list-item-class");
+    listElement.innerHTML = movie.Title + '<br /><img src="' + movie.Poster + '">';
+    listElement.setAttribute('id', movie.imdbID);
+
+    return listElement;
+}
 
 
-let age = 30;
-console.log(age)
 
-let leeftijd = 30;
-console.log(typeof leeftijd);
+let showMovies = function (themovies) {
+    filmsList.innerHTML = '';
+    let addMovieToDom = function (movie) {
+        let elem = createLiElement(movie);
+        filmsList.appendChild(elem);
+    }
+    themovies.map(addMovieToDom);
+}
 
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+showMovies(movies);
 
-
-
-
-
-
+let resetFilter = function () {
+    showMovies(movies);
+}
