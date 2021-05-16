@@ -6,11 +6,11 @@ const filmsList = document.getElementById('films-list');
 let createLiElement = function (movie) {
     const listElement = document.createElement("li");
     listElement.classList.add("list-item-class");
-    listElement.innerHTML = '<img src="' + movie.Poster + '">';
+    listElement.innerHTML = '<a href="https://www.imdb.com/title/' + movie.imdbID + '" target="_blank""><img src="' + movie.Poster + '"></a>';
     listElement.setAttribute('id', movie.imdbID);
 
     return listElement;
-}   
+}
 
 let showMovies = function (themovies) {
     filmsList.innerHTML = '';
@@ -26,6 +26,7 @@ let showMovies = function (themovies) {
 }
 
 showMovies(movies);
+
 
 
 filters.forEach(filter => {
@@ -47,7 +48,7 @@ filters.forEach(filter => {
                 showMovies(filterGetBatmanMovies());
                 break;
             default:
-                // do nothing
+            // do nothing
         }
         ;
     });
