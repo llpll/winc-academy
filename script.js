@@ -7,16 +7,16 @@ filters.forEach(filter => {
                 showMovies(filterGetAvengersMovies());
                 break;
             case 'nieuw':
-                filterGetNewMovies();
+                showMovies(filterGetNewMovies());
                 break;
             case 'xmen':
-                filterGetXmenMovies();
+                showMovies(filterGetXmenMovies());
                 break;
             case 'princess':
-                filterGetPrincessMovies();
+                showMovies(filterGetPrincessMovies());
                 break;
             case 'batman':
-                filterGetBatmanMovies();
+                showMovies(filterGetBatmanMovies());
                 break;
             default:
             // code block
@@ -25,41 +25,52 @@ filters.forEach(filter => {
     });
 
 });
+let src = document.getElementById('search');
+src.addEventListener('input', function (e) {
+    let term = e.target.value;
+    if (term.length < 3) {
+        return;
+    }
+    let found = movies.filter(movie => movie.Title.includes(term));
+    return showMovies(found);
+});
 
 let filterGetAvengersMovies = function () {
     return movies.filter(movie => movie.Title.includes('Avengers'));
 };
 
 let filterGetNewMovies = function () {
-    console.log('i need new movies');
+    return movies.filter(movie => movie.Year >= 2014);
 };
 
 let filterGetPrincessMovies = function () {
-    console.log('i need [princess] movies');
+    return movies.filter(movie => movie.Title.includes('Princess'));
 };
 
 let filterGetBatmanMovies = function () {
-    console.log('i need [batm] movies');
+    return movies.filter(movie => movie.Title.includes('Batman'));
 };
 
 let filterGetXmenMovies = function () {
-    console.log('i need [xmens] movies');
+    return movies.filter(movie => movie.Title.includes('X-Men'));
 };
 const filmsList = document.getElementById('films-list');
 
 let createLiElement = function (movie) {
     const listElement = document.createElement("li");
     listElement.classList.add("list-item-class");
-    listElement.innerHTML = movie.Title + '<br /><img src="' + movie.Poster + '">';
+    listElement.innerHTML = '<img src="' + movie.Poster + '">';
     listElement.setAttribute('id', movie.imdbID);
 
     return listElement;
 }
 
-
-
 let showMovies = function (themovies) {
     filmsList.innerHTML = '';
+    if (themovies.length == 0) {
+        filmsList.innerHTML = 'Nothing found! Try smth else!';
+    }
+
     let addMovieToDom = function (movie) {
         let elem = createLiElement(movie);
         filmsList.appendChild(elem);
