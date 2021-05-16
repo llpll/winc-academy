@@ -1,5 +1,33 @@
 const filters = document.querySelectorAll('.filter');
 
+
+const filmsList = document.getElementById('films-list');
+
+let createLiElement = function (movie) {
+    const listElement = document.createElement("li");
+    listElement.classList.add("list-item-class");
+    listElement.innerHTML = '<img src="' + movie.Poster + '">';
+    listElement.setAttribute('id', movie.imdbID);
+
+    return listElement;
+}   
+
+let showMovies = function (themovies) {
+    filmsList.innerHTML = '';
+    if (themovies.length == 0) {
+        filmsList.innerHTML = 'Nothing found! Try smth else!';
+    }
+
+    let addMovieToDom = function (movie) {
+        let elem = createLiElement(movie);
+        filmsList.appendChild(elem);
+    }
+    themovies.map(addMovieToDom);
+}
+
+showMovies(movies);
+
+
 filters.forEach(filter => {
     filter.addEventListener('click', event => {
         switch (event.target.value) {
@@ -19,7 +47,7 @@ filters.forEach(filter => {
                 showMovies(filterGetBatmanMovies());
                 break;
             default:
-            // code block
+                // do nothing
         }
         ;
     });
@@ -54,31 +82,8 @@ let filterGetBatmanMovies = function () {
 let filterGetXmenMovies = function () {
     return movies.filter(movie => movie.Title.includes('X-Men'));
 };
-const filmsList = document.getElementById('films-list');
 
-let createLiElement = function (movie) {
-    const listElement = document.createElement("li");
-    listElement.classList.add("list-item-class");
-    listElement.innerHTML = '<img src="' + movie.Poster + '">';
-    listElement.setAttribute('id', movie.imdbID);
 
-    return listElement;
-}
-
-let showMovies = function (themovies) {
-    filmsList.innerHTML = '';
-    if (themovies.length == 0) {
-        filmsList.innerHTML = 'Nothing found! Try smth else!';
-    }
-
-    let addMovieToDom = function (movie) {
-        let elem = createLiElement(movie);
-        filmsList.appendChild(elem);
-    }
-    themovies.map(addMovieToDom);
-}
-
-showMovies(movies);
 
 let resetFilter = function () {
     showMovies(movies);

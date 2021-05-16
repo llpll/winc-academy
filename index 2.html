@@ -3,6 +3,7 @@
 
 <head>
     <title>Mijn eerste JavaScript speeltuin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" defer src="movies-script.js"></script>
     <script type="text/javascript" defer src="script.js"></script>
@@ -10,11 +11,14 @@
 </head>
 
 <body>
-    <nav class="radiobtn-filter">
-        <div>
-            <input type="text" id="search" name="filter" value="" class="filter" placeholder="Search a movie" />
-        </div>
 
+    <div class="header">
+        <h1>Welkom bij de filmzoeker</h1>
+
+        <input type="text" id="search" name="filter" value="" class="filter" placeholder="Search movie series" />
+    </div>
+
+    <nav class="radiobtn-filter">
         <div>
             <input type="radio" id="nieuw" name="filter" value="nieuw" class="filter" />
             <label for="nieuw">Laaste films, 2014 of nieuwer</label><br>
@@ -39,8 +43,9 @@
             <input type="radio" id="batman" name="filter" value="batman" class="filter" />
             <label for="batman">Batman films</label>
         </div>
+        <button onClick="resetFilter();">Reset filter</button>
     </nav>
-    <button onClick="resetFilter();">Reset filter</button>
+   
     <main>
         <ul id="films-list">
 

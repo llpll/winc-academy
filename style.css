@@ -1,38 +1,50 @@
-/* body {
+
+body {
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between;
-
-
-} */
-
-.filter {
-    display: inline-flex;
+    justify-content: center;
 }
 
-ul {
+.header {
+    align-self: center;
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-between;
+    justify-content: center;
+    
 }
 
-li {
+ul#films-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     list-style-type: none;
-    padding: 16px 0;
-    width: 150px;
-
+    padding-left: 0;
 }
 
-#movie.imdbID {
+.list-item-class img {
     width: 200px;
+    height: 300px;
+    margin-bottom: 16px; 
+    padding: 8px;
 }
 
-/* .list-item-class {
-    display: none;
-} */
+input {
+    border: 1px solid lightgray;   
+}
 
-#search {
+
+.radiobtn-filter {
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+}
+
+input#search.filter {
     padding: 8px;
     margin-bottom: 24px;
-    /* border: 0.5 solid lightblue; */
+}
+
+label {
+    padding-right: 32px;
+    margin-bottom: 24px;
 }
