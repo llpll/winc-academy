@@ -1,32 +1,33 @@
-console.log("Hello Winc Academy")
+const sinterklaasIsGul = true;
 
-let name = 'Elena';
-console.log('Elena');
+// Promise maken > API (back-end) kant
+const krijgIkEenNieuweiPhone = new Promise(
+    (resolve, reject) => {
+        if (sinterklaasIsGul) {
+            const smartphone = {
+                merk: 'Apple',
+                type: 'iPhone 11'
+            };
+            resolve(smartphone);
+        } else {
+            const metWelkeReden = new Error('Je bent stout geweest, geen cadeaus voor jou');
+            reject(metWelkeReden);
+        }
 
-let number = 4 + 4;
-console.log(number);
+    }
+);
 
-let string = '4 + 4';
-console.log(string);
+// Promise aanroepen, of "consumeren"
+const vraagAanSinterklaas = () => {
+    krijgIkEenNieuweiPhone
+        .then(function (resolved) {
+            // yay, je hebt een nieuwe smartphone
+            console.log(resolved);
+        })
+        .catch(function (error) {
+            // oeps, geen Sinterklaas cadeau dit jaar
+            console.log(error.message);
+        });
+}
 
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
-
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
-
-
+vraagAanSinterklaas();
