@@ -1,32 +1,19 @@
-console.log("Hello Winc Academy")
+const optellen = function(...args) {
+    return args.reduce((acc,item) => {
+            return acc + item;
+    })
+}
 
-let name = 'Elena';
-console.log('Elena');
-
-let number = 4 + 4;
-console.log(number);
-
-let string = '4 + 4';
-console.log(string);
-
-let substraction = 90 - 10;
-console.log(substraction);
-
-let multiplication = 3 * 20;
-console.log(multiplication);
-
-
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+console.log(optellen(1,2,3,4,5,6));
 
 
 
 
 
+const optellen = function(num1, num2, num3) {
+return num1 + num2 + num3;
+}
 
+const cijfers = [1, 2, 3];
+
+console.log(optellen(...cijfers));
