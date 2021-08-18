@@ -1,32 +1,101 @@
-console.log("Hello Winc Academy")
+function getFavMovie() {
+    const endpoint = 'movie/115';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let title = document.getElementById('my-fav');
+        title.appendChild(document.createTextNode('My Fav: ' + data['title']));
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let name = 'Elena';
-console.log('Elena');
+function getGenres() {
+    const endpoint = 'genre/movie/list';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let ul = document.getElementById('genres');
+        data['genres'].forEach(genre => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(genre['name'] + ' -> ID: ' + genre['id']));
+            ul.appendChild(li);
+        });
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let number = 4 + 4;
-console.log(number);
+function getTopMovies() {
+    const endpoint = 'movie/top_rated';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let ul = document.getElementById('top-rated');
+        let top10 = data['results'].slice(0, 10);
+        top10.forEach((movie, index) => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(movie['title'] + ' -> ID: ' + movie['id']));
+            ul.appendChild(li);
+        }); 
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let string = '4 + 4';
-console.log(string);
+function getTopRatedActionMovies() {
+    const endpoint = 'discover/movie?with_genres=28';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let ul = document.getElementById('top-rated-action');
+        let top10 = data['results'].slice(0, 10);
+        top10.forEach((movie, index) => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(movie['title'] + ' -> ID: ' + movie['id']));
+            ul.appendChild(li);
+        }); 
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let substraction = 90 - 10;
-console.log(substraction);
+function getMoviesByYear(year) {
+    const endpoint = 'discover/movie?primary_release_year=' + year;
+    
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let ul = document.getElementById('1975-list');
+        let top10 = data['results'].slice(0, 10);
+        top10.forEach((movie, index) => {
+            let li = document.createElement("li");
+            li.appendChild(document.createTextNode(movie['title'] + ' -> ID: ' + movie['id']));
+            ul.appendChild(li);
+        }); 
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let multiplication = 3 * 20;
-console.log(multiplication);
+function postRating() {
+    const endpoint = 'authentication/guest_session/new';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let sessionId = data['guest_session_id'];
+        rateMovie(sessionId);
+    }) 
+    .catch(error => {console.log(error)});
+}
 
+function rateMovie(sessionId) {
+    const endpoint = '/movie/115/rating?guest_session_id=' + sessionId;
+    const data = {
+        "value": 10
+    };
 
-let age = 30;
-console.log(age)
+    postData(endpoint, data).then(response => response.json())
+    .then(data => { 
+        console.log('ura', data);
 
-let leeftijd = 30;
-console.log(typeof leeftijd);
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
+getFavMovie();
+getGenres();
+getTopMovies();
+getTopRatedActionMovies();
+getMoviesByYear(1975);
 
-
-
-
-
-
+postRating();
