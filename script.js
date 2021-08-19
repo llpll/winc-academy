@@ -1,32 +1,47 @@
-console.log("Hello Winc Academy")
 
-let name = 'Elena';
-console.log('Elena');
+function getWeatherForCity(city) {
+    const endpoint = 'weather?q=' + city + '&units=metric';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let results = document.getElementById('results');
+        let h2 = document.createElement("h2"); 
+        let msg = 'Unknown error!';
+        if (data.cod == 200){
+            msg = 'Current weather in ' + data.name + ': ' + data.main.temp + ' degrees with ' + data.weather[0].description;
+        }else {
+            msg = 'ERROR for "'+ city +'": ' + data.message;
+        }
 
-let number = 4 + 4;
-console.log(number);
+        h2.appendChild( document.createTextNode(msg));
+        results.prepend(h2);
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let string = '4 + 4';
-console.log(string);
+function getWeatherForCoordinates(lat,lon) {
+    const endpoint = 'weather?lat='+ lat +'&lon=' + lon + '&units=metric';
+    getData(endpoint).then(response => response.json())
+    .then(data => { 
+        let title = document.getElementById('curr');
+        title.appendChild(document.createTextNode('Current weather in ' + data.name + ': ' + data.main.temp + ' degrees with ' + data.weather[0].description));
+    }) 
+    .catch(error => {console.log(error)});
+}
 
-let substraction = 90 - 10;
-console.log(substraction);
+function getCurrentLocation() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
 
-let multiplication = 3 * 20;
-console.log(multiplication);
+function showPosition(position) {
+    getWeatherForCoordinates(position.coords.latitude, position.coords.longitude);
+}
 
+function showCustomerWeather()
+{
+    const city = document.getElementById('city').value;
+    if (city) {
+        getWeatherForCity(city);
+    }
+}
 
-let age = 30;
-console.log(age)
-
-let leeftijd = 30;
-console.log(typeof leeftijd);
-
-let leeftijdString = '30';
-console.log(typeof leeftijdString);
-
-
-
-
-
-
+getCurrentLocation();
